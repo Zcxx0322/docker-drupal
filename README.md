@@ -15,6 +15,14 @@ docker run -d --privileged \
     --env TZ=Asia/Shanghai \
     --name drupal zcxx0322/drupal:0.0.1
 ```
+## 进入容器
+```bash
+docker exec -it drupal bash
+```
+## 查看容器IP
+```bash
+ip a
+```
 
 ## 添加本地域名解析
 ```bash
@@ -22,7 +30,7 @@ vim /etc/hosts
 ```
 - 添加以下内容：
 ```
-容器ip地址 test.drupal.com
+容器IP test.drupal.com
 ``` 
 
 ## 访问地址
