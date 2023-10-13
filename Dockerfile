@@ -9,7 +9,7 @@ RUN dnf install -y mysql-server
 COPY var/lib/mysql /var/lib/mysql
 RUN chown -R mysql:mysql /var/lib/mysql
 
-RUN dnf install -y php-fpm
+RUN dnf install -y php-fpm php-gd php-dom php-xml php-pdo php-mbstring php-opcache
 RUN mkdir -p /run/php-fpm/
 
 WORKDIR /var/www/html
@@ -40,4 +40,4 @@ RUN chmod 755 /usr/local/bin/docker-entrypoint.sh
 
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 
-EXPOSE 22 
+EXPOSE 22 9000
